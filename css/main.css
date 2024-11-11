@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+#header {
+    font-size: 70px;
+    font-family: Helvetica;
+    margin-left: 25px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    cursor: default;
+}
+.names {
+    text-decoration: none;
+    font-size: 50px;
+    font-family: Helvetica;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#modeButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+a {
+    color: blue;
+}
