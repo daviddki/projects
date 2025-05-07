@@ -1,4 +1,4 @@
-let mode = localStorage.getItem("mode") || "light";
+let mode = sessionStorage.getItem("mode") || "light";
 
 window.onload = function() {
     const button = document.getElementById("modeButton");
@@ -17,7 +17,7 @@ function changeMode() {
         lightMode(button);
     }
 
-    localStorage.setItem("mode", mode);
+    sessionStorage.setItem("mode", mode);
 }
 
 function darkMode(button) {
