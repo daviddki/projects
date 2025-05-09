@@ -1,36 +1,49 @@
-body {
+html, body {
+    margin: 0;
+    padding: 0;
     background-color: #eafff0;
 }
 
 #Name {
-    margin: 5px;
-    top: 10px;
-    left: 10px;
-    bottom: 0px;
+    margin: 1vw;
     background-color: transparent;
-    font-size: 70px;
+    font-size: clamp(2rem, calc(5vw + 1rem), 5rem);
 }
 
 .ed {
-    top: 0px;
     background-color: transparent;
-    font-size: 25px;
+    font-size: clamp(1rem, calc(1.5vw + 0.5rem), 2rem);
     line-height: 0.5;
-    margin: 5px;
+    margin: 1vw;
 }
 
 .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    line-height: 0.5;
+    top: 1vh;
+    right: 1vw;
+    line-height: 0;
     background-color: transparent;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+.image-text {
+    display: flex;
+    align-items: center
+}
+
+.image-text img {
+    margin-right: 0.3vw;
+    width: 1vw;
+    height: 1vw;
 }
 
 .contact-images {
     position: absolute;
-    top: 18px;
-    right:250px;
+    top: 2vh;
+    right:26.7vw;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -39,4 +52,9 @@ body {
 .image {
     height: 20px;
     width: 20px;
+}
+
+.cs-projects {
+    margin-left: 1vw;
+    font-size: clamp(0.6rem, calc(1vw + 0.25rem), 1.25rem);
 }
