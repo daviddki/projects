@@ -1,11 +1,13 @@
 let mode = localStorage.getItem("mode") || "light";
 
 window.onload = function() {
+    
     if (mode == "dark") {
         darkMode();
     } else {
         lightMode();
     }
+    
 
     document.addEventListener('keydown', updateFaller);
 }
