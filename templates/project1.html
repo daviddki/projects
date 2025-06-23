@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 1</title>
-    <link href="project1.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/project1.css') }}"
+    />
   </head>
   <body>
     <div class="game-grid" id="gameGrid">
@@ -16,7 +19,7 @@
       ><span class="dot">.</span>
     </p>
     -->
-    <p><a href="../projects.html">Back</a></p>
-    <script src="project1.js"></script>
+    <p><a href="{{ url_for('projects') }}">Back</a></p>
+    <script src="{{ url_for('static', filename='scripts/project1.js') }}"></script>
   </body>
 </html>

@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>projects</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
   </head>
   <body>
     <h1 id="header">Projects:</h1>
-    <a href="project1/project1.html" class="names"
+    <a href="{{ url_for('project1') }}" class="names"
       >Project 1: Jewel Game(In Progress)</a
     >
     <button value="light" id="modeButton" onclick="changeMode()">
       Dark Mode
     </button>
-    <p id="back"><a href="index.html">Back</a></p>
+    <p id="back"><a href="{{ url_for('index') }}">Back</a></p>
   </body>
 </html>
