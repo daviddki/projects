@@ -1,57 +1,65 @@
+<!--
+  Portfolio HTML assisted by ChatGPT, Feb 2026
+  Author: David Kim
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/portfolio.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/portfolio.js"></script>
-    <title>portfolio</title>
-  </head>
-  <body>
-    <h1 id="Name">David Kim</h1>
-    <div class="ed">
-      <p>Computer Science and Engineering Major</p>
-      <p>University of California, Irvine</p>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Kim | Portfolio</title>
+  <link href="css/portfolio.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+  <header>
+    <h1>David Kim</h1>
+    <p>Computer Science and Engineering | UC Irvine</p>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="main-content">
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>4-DOF Robotic Arm | ZIMS</h3>
+        <p><strong>Role:</strong> Electrical Engineer | Jan 2025 – May 2025</p>
+        <p>
+          This 4-DOF robotic arm was developed over several months by a six-member interdisciplinary team across design, mechanical, and electrical subteams, incorporating custom 3D-printed components and independently wired electronics. As an Electrical Engineer, I was responsible for programming the arm’s movement and integrating circuitry between electronic components and power systems.
+        </p>
+      </div>
+
+      <!-- Additional projects can be added here -->
+
+    </section>
+  </div>
+
+  <footer id="contact">
+    <h2>Contact</h2>
     <div class="contact-info">
-      <div class="image-text">
-        <img src="images/email.png" class="image" />
-        <p>Email: daviddkim0@gmail.com</p>
+      <div class="contact-item">
+        <img src="images/email.png" alt="Email">
+        <a href="mailto:daviddkim0@gmail.com">daviddkim0@gmail.com</a>
       </div>
-      <div class="image-text">
-        <img src="images/phone.png" class="image" />
-        <p>Cell: (714) 606-9972</p>
+      <div class="contact-item">
+        <img src="images/phone.png" alt="Phone">
+        <a href="tel:+17146069972">(714) 606-9972</a>
       </div>
-      <div class="image-text">
-        <img src="images/linkedin.png" class="image" />
-        <p>
-          Linkedin:
-          <a
-            href="https://www.linkedin.com/in/david-kim-152a4724b/"
-            target="_blank"
-            >linkedin.com/in/david-kim</a
-          >
-        </p>
+      <div class="contact-item">
+        <img src="images/linkedin.png" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/david-kim-152a4724b/" target="_blank">linkedin.com/in/david-kim</a>
       </div>
-      <div class="image-text">
-        <img src="images/github.png" class="image" />
-        <p>
-          GitHub:
-          <a href="https://github.com/daviddki" target="_blank"
-            >github.com/daviddki</a
-          >
-        </p>
+      <div class="contact-item">
+        <img src="images/github.png" alt="GitHub">
+        <a href="https://github.com/daviddki" target="_blank">github.com/daviddki</a>
       </div>
     </div>
-    <!--<div class="cs-projects">
-      <p><a href="projects.html">Fun Side Coding Projects</a></p>
-    </div>-->
-    <div class="robot-arm">
-      <div class="project-name"><u>Robot Arm</u></div>
-      <div class="summary">Summary:</div>
-      <div class="description"></div>
-      <div class="project-images"></div>
-      <div class="caption"><p></p></div>
-    </div>
-  </body>
+  </footer>
+
+</body>
 </html>

@@ -1,75 +1,163 @@
+/*
+  Portfolio CSS assisted by ChatGPT, Feb 2026
+  Author: David Kim
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #eafff0;
+  height: 100%;
 }
 
-#Name {
-    margin: 1vw;
-    background-color: transparent;
-    font-size: clamp(2rem, calc(5vw + 1rem), 5rem);
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-.ed {
-    background-color: transparent;
-    font-size: clamp(0.75rem, calc(1vw + 0.5rem), 1.5rem);
-    line-height: 0.5;
-    margin: 1vw;
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.contact-info {
-    display: flex;
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #004aad;
+  color: #fff;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #003377;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #004aad;
+}
+
+.project {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #004aad;
+  color: #fff;
+  padding: 1rem 1rem;
+  gap: 0.3rem;
+}
+
+footer h2 {
+  margin: 0;
+  color: #fff;
+}
+
+footer .contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+footer .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+footer .contact-item a {
+  display: flex;
+  align-items: center;
+}
+
+footer .contact-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
     flex-direction: column;
-    align-items: left;
-    position: absolute;
-    top: 1vh;
-    right: 1vw;
-    line-height: 0;
-    background-color: transparent;
-    font-size: clamp(0.5rem, 1vw, 1rem);
-}
+  }
 
-.image-text {
-    display: flex;
-    align-items: center
-}
+  nav a {
+    margin: 0.3rem 0;
+  }
 
-.image-text img {
-    margin-right: 0.3vw;
-    width: 1vw;
-    height: 1vw;
-}
-
-.contact-images {
-    position: absolute;
-    top: 2vh;
-    right:26.7vw;
-    display: flex;
+  footer .contact-info {
     flex-direction: column;
-    gap: 4px;
-}
-
-.image {
-    height: 20px;
-    width: 20px;
-}
-
-.cs-projects {
-    margin-left: 1vw;
-    font-size: clamp(0.6rem, calc(1vw + 0.25rem), 1.25rem);
-}
-
-.project-name {
-    margin-left: 1vw;
-    font-size: clamp(1rem, calc(1.5vw + 0.75rem), 2.5rem);
-}
-
-.summary {
-    margin-left: 1vw;
-    font-size: clamp(1rem, calc(1vw + 0.5rem), 2rem);
-}
-
-.description {
-    margin-left: 1vw;
-    
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
