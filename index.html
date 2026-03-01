@@ -25,13 +25,160 @@
   <div class="main-content">
     <section id="projects">
       <h2>Projects</h2>
-
+      <!-- 1. Drone -->
       <div class="project">
-        <h3>4-DOF Robotic Arm | ZIMS</h3>
+        <h3>Quadcopter Drone (Class Project)</h3>
+        <p><strong>Role:</strong> Embedded Systems Engineer | Sep 2025 – Nov 2025</p>
+        <p>
+          Over the course of a quarter, our team of four assembled a drone from a set of components provided by the professor, wiring and
+          configuring each system to create a fully functional UAV. I worked alongside three other students, implementing wiring, integrating
+          systems, and testing as part of a fully collaborative effort. The drone was configured using ArduPilot firmware, which we
+          installed and calibrated on the flight controller. We also integrated the GPS module and telemetry system to enable autonomous flight
+          capabilities.
+        </p>
+
+        <p class="media-label">Build Process</p>
+
+        <div class="project-media">
+          <figure>
+            <img src="images/drone/radiorx.jpeg" alt="Radio Receiver">
+            <figcaption>Jumper wires soldered to the radio receiver.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/drone/flight_controller.jpeg" alt="Flight Controller">
+            <figcaption>Fully assembled flight controller with all pins soldered..</figcaption>
+          </figure>
+        </div>
+
+        <div class="project-media">
+          <figure>
+            <img src="images/drone/radio_controller.jpeg" alt="Radio Controller">
+            <figcaption>Flashing firmware on the radio controller.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/drone/almost_complete.jpeg" alt="Final Product">
+            <figcaption>Nearly complete drone assembly.</figcaption>
+          </figure>
+        </div>
+
+        <p class="media-label">Maiden Flight</p>
+
+        <figure>
+          <video controls muted>
+            <source src="videos/maiden_flight.mov" type="video/mp4">
+          </video>
+        </figure>
+
+        <p>
+          A complete list of components used in this project is provided in the PDF: 
+          <a href="docs/StudentDroneAndToolKitChecklist.pdf" target="_blank">List of Parts</a>.
+        </p>
+      </div>
+
+      <!-- 2. Robot Arm -->
+      <div class="project">
+        <h3>Robotic Arm</h3>
         <p><strong>Role:</strong> Electrical Engineer | Jan 2025 – May 2025</p>
         <p>
-          This 4-DOF robotic arm was developed over several months by a six-member interdisciplinary team across design, mechanical, and electrical subteams, incorporating custom 3D-printed components and independently wired electronics. As an Electrical Engineer, I was responsible for programming the arm’s movement and integrating circuitry between electronic components and power systems.
+          This 4-DOF robotic arm was developed over several months by a six-member interdisciplinary team across design, mechanical, and
+          electrical subteams, incorporating custom 3D-printed components and independently wired electronics. As an Electrical Engineer,
+          I was responsible for programming the arm’s movement and integrating circuitry between electronic components and power systems.
+          The custom designed hand uses servo motors, while the arm uses stepper motors, with all movement programmed in Arduino IDE.
         </p>
+        
+        <p class="media-label">Electrical Integration</p>
+
+        <div class="project-media">
+          <figure>
+            <img src="images/robot_arm/wires.jpeg" alt="Wiring Integration">
+            <figcaption>Custom wiring between RAMPS Shield and stepper drivers.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/robot_arm/circuitry.jpeg" alt="Robotic Arm Circuitry">
+            <figcaption>Completed end-to-end wiring from the power supply to the motor drivers.</figcaption>
+          </figure>
+        </div>
+
+        <figure>
+          <video controls muted>
+            <source src="videos/arm_movement.mov" type="video/mp4">
+          </video>
+          <figcaption>Moving the robotic arm for the first time.</figcaption>
+        </figure>
+
+
+        <p class="media-label">System Testing & Final Assembly</p>
+
+        <div class="project-media">
+          <figure>
+            <img src="images/robot_arm/testing.jpeg" alt="Testing">
+            <figcaption>Testing hand movement, a collaborative effort between electrical and mechanical subteams.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/robot_arm/complete.jpeg" alt="Final Product">
+            <figcaption>Fully assembled 4-DOF robotic arm.</figcaption>
+          </figure>
+        </div>
+
+        <p class="project-link">
+          The code for the 4-DOF arm is available on 
+          <a href="https://github.com/daviddki/robot-arm" target="_blank">GitHub</a>.
+        </p>
+      </div>
+
+      <!-- 3. Simon Game -->
+      <div class="project">
+        <h3>Simon Game (Class Project)</h3>
+        <p><strong>Role:</strong> Embedded Systems Engineer | May 2025 – Jun 2025</p>
+        <p>
+          This class project involved designing and building a physical version of the classic Simon game using an ATmega32 microcontroller.
+          As a culminating project in the course, I worked with a partner to create an embedded system that integrated the various components
+          and concepts learned throughout the semester. I coded the game logic in Arduino and assisted with wiring and integrating the buttons,
+          LEDs, buzzers, and LCD display.
+        </p>
+
+        <p class="media-label">Build Process</p>
+        
+        <div class="project-media">
+          <figure>
+            <img src="images/simon_game/soldering.jpg" alt="Soldering">
+            <figcaption>Soldering the LCD pins.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/simon_game/wiring.jpeg" alt="Simon Game Circuitry">
+            <figcaption>Wiring setup from a previous project, applied to the Simon Game.</figcaption>
+          </figure>
+        </div>
+
+        <p class="media-label">Final Assembly</p>
+
+        <div class="project-media">
+          <figure>
+            <img src="images/simon_game/complete.png" alt="Complete Simon Game">
+            <figcaption>Final assembled Simon Game.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/simon_game/diagram.png" alt="Wiring Diagram">
+            <figcaption>Wiring diagram for the Simon Game.</figcaption>
+          </figure>
+        </div>
+
+        <p class="project-link">
+          The code for the Simon Game is available on 
+          <a href="https://github.com/samdryoo/cs145_projects/tree/main/project5" target="_blank">GitHub</a>.
+        </p>
+
+        <p>
+          A complete list of components used in this project is provided in the PDF: 
+          <a href="docs/CS 145_Parts_List.pdf" target="_blank">List of Parts</a>.
+        </p>
+
       </div>
 
       <!-- Additional projects can be added here -->
