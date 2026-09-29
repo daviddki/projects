@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipelined MIPS Processor | David Kim</title>
+  <meta name="description" content="Lab project. A five-stage pipelined MIPS processor in Verilog with data forwarding, load-use stalls and branch flushing." />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1f3a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' fill='%23ffd23f' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="css/portfolio.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="David Kim, home">
+        <span class="brand-mark">DK</span>
+        <span class="brand-name">David Kim</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <div class="wrap">
+      <a class="back-link" href="index.html#projects">&larr; All projects</a>
+
+      <article class="project">
+        <div class="project-head">
+          <span class="project-num">05</span>
+          <div>
+            <h1>Pipelined MIPS Processor</h1>
+            <p class="project-kicker">Lab project · EECS 112L Organization of Digital Computer Lab</p>
+          </div>
+        </div>
+
+        <dl class="spec">
+          <div><dt>Course</dt><dd>EECS 112L</dd></div>
+          <div><dt>Date</dt><dd>Jan 2026</dd></div>
+          <div><dt>Design</dt><dd>5-stage MIPS</dd></div>
+          <div><dt>Tools</dt><dd>
+            <ul class="chips"><li>Verilog</li><li>Pipelining</li><li>Forwarding</li><li>Hazard detection</li></ul>
+          </dd></div>
+        </dl>
+
+        <p>
+          In this lab I added pipelining to the processor from an earlier lab, turning it into a five-stage MIPS pipeline written in Verilog.
+          I implemented the instruction fetch, decode and execute stages, the forwarding unit, and the top-level module that connects all
+          five stages through their pipeline registers, and I wired in the provided hazard detection logic.
+        </p>
+
+        <h4 class="media-label">Pipeline overview</h4>
+        <div class="pipeline" role="group" aria-label="Five pipeline stages in order: instruction fetch, decode, execute, memory and write back, with pipeline registers between them">
+          <div class="pl-stage"><span class="pl-abbr">IF</span><strong>Instruction fetch</strong><span>PC, instruction memory, next-PC mux</span></div>
+          <div class="pl-reg"><span>IF/ID</span></div>
+          <div class="pl-stage"><span class="pl-abbr">ID</span><strong>Decode</strong><span>Register file, control unit, branch and jump</span></div>
+          <div class="pl-reg"><span>ID/EX</span></div>
+          <div class="pl-stage"><span class="pl-abbr">EX</span><strong>Execute</strong><span>ALU, ALU control, forwarding muxes</span></div>
+          <div class="pl-reg"><span>EX/MEM</span></div>
+          <div class="pl-stage"><span class="pl-abbr">MEM</span><strong>Memory</strong><span>Data memory read and write</span></div>
+          <div class="pl-reg"><span>MEM/WB</span></div>
+          <div class="pl-stage"><span class="pl-abbr">WB</span><strong>Write back</strong><span>Picks ALU result or loaded data</span></div>
+        </div>
+        <div class="pl-notes">
+          <div class="pl-note pl-hazard"><strong>Hazard detection</strong><span>Stalls on a load-use hazard and flushes IF/ID on a taken branch or jump</span></div>
+          <div class="pl-note pl-forward"><strong>Forwarding unit</strong><span>Sends the newest result from EX/MEM or MEM/WB straight to the ALU inputs</span></div>
+        </div>
+
+        <h4 class="media-label">How it works</h4>
+        <ol class="stages">
+          <li>
+            <strong>Five stages, four pipeline registers</strong>
+            <span>Instructions move through fetch, decode, execute, memory and write back, with registers between the stages. The IF/ID register has enable and flush inputs so it can hold or clear its instruction; the others pass their values on every clock.</span>
+          </li>
+          <li>
+            <strong>Data forwarding</strong>
+            <span>In execute, the forwarding unit compares each source register with the destinations in the EX/MEM and MEM/WB registers. On a match, a 4-to-1 mux feeds the newest result into the ALU, so dependent instructions don't wait for the register file.</span>
+          </li>
+          <li>
+            <strong>Load-use stalls</strong>
+            <span>Hazard detection catches a load followed by an instruction that needs its result. The PC and IF/ID register hold for one cycle while decode sends zeros down the pipeline as a bubble.</span>
+          </li>
+          <li>
+            <strong>Branches and jumps</strong>
+            <span>Both are resolved in decode. When one is taken, the instruction fetched behind it is flushed from IF/ID so it never executes.</span>
+          </li>
+        </ol>
+
+        <h4 class="media-label">Simulation</h4>
+        <p>
+          I checked the design against the provided testbench, simulating 1000 ns. Reset is held for the first 100 ns, so the test cases start
+          at 100 ns. The tracked data memory locations update one by one and reach their expected values, and all provided test cases passed.
+        </p>
+        <figure class="wide-fig">
+          <img class="zoomable" src="images/pipeline/waveform.png" alt="Simulation waveform from 0 to 1000 nanoseconds showing the clock, reset, the processor result, and eight data memory locations changing from zero to their expected values as the program runs" loading="lazy" width="1416" height="410" />
+          <figcaption>Simulation waveform, 0 to 1000 ns: clock, reset, the processor result, and eight data memory locations ([11] through [18]) updating as the program runs.</figcaption>
+        </figure>
+
+        <div class="project-links">
+          <a class="link-btn" href="docs/EECS112L_Lab4_Report.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h6"/></svg>
+            Read the lab report (PDF)
+          </a>
+        </div>
+      </article>
+
+        <nav class="pager" aria-label="More projects">
+          <a href="nand-gate.html"><span>Previous</span>CMOS NAND Gate</a>
+          <a href="drone.html" class="pager-next"><span>Next</span>Quadcopter Drone</a>
+        </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer-slim">
+    <div class="wrap">
+      <a href="index.html#contact">Contact</a>
+      <p class="copyright">&copy; 2026 David Kim</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox" aria-label="Enlarged photo">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <figure>
+      <img alt="" />
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Next photo">&rsaquo;</button>
+  </dialog>
+
+  <script src="scripts/portfolio.js" defer></script>
+</body>
+</html>

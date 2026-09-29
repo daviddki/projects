@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900" role="img" aria-label="Five pipeline stages with registers between them">
+  <defs>
+    <pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#0b1f3a"/>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3">
+    <rect x="30" y="112" width="52" height="72" rx="8"/>
+    <rect x="100" y="112" width="52" height="72" rx="8"/>
+    <rect x="170" y="112" width="52" height="72" rx="8"/>
+    <rect x="240" y="112" width="52" height="72" rx="8"/>
+    <rect x="310" y="112" width="52" height="72" rx="8"/>
+  </g>
+  <g fill="#ffd23f">
+    <rect x="89" y="102" width="4" height="92" rx="2"/>
+    <rect x="159" y="102" width="4" height="92" rx="2"/>
+    <rect x="229" y="102" width="4" height="92" rx="2"/>
+    <rect x="299" y="102" width="4" height="92" rx="2"/>
+  </g>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">
+    <text x="56" y="154">IF</text>
+    <text x="126" y="154">ID</text>
+    <text x="196" y="154">EX</text>
+    <text x="266" y="154">MEM</text>
+    <text x="336" y="154">WB</text>
+  </g>
+  <!-- forwarding path: results from MEM/WB side loop back to EX -->
+  <path d="M266 190V212Q266 224 254 224H208Q196 224 196 212V200" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 202L196 191L202 202Z" fill="#ffffff" fill-opacity=".75"/>
+</svg>
