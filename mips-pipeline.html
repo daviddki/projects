@@ -59,15 +59,15 @@
 
         <h4 class="media-label">Pipeline overview</h4>
         <div class="pipeline" role="group" aria-label="Five pipeline stages in order: instruction fetch, decode, execute, memory and write back, with pipeline registers between them">
-          <div class="pl-stage"><span class="pl-abbr">IF</span><strong>Instruction fetch</strong><span>PC, instruction memory, next-PC mux</span></div>
+          <div class="pl-stage"><div class="pl-title"><span class="pl-abbr">IF</span><span class="pl-name">(Instruction fetch)</span></div><span class="pl-detail">PC, instruction memory, next-PC mux</span></div>
           <div class="pl-reg"><span>IF/ID</span></div>
-          <div class="pl-stage"><span class="pl-abbr">ID</span><strong>Decode</strong><span>Register file, control unit, branch and jump</span></div>
+          <div class="pl-stage"><div class="pl-title"><span class="pl-abbr">ID</span><span class="pl-name">(Decode)</span></div><span class="pl-detail">Register file, control unit, branch and jump</span></div>
           <div class="pl-reg"><span>ID/EX</span></div>
-          <div class="pl-stage"><span class="pl-abbr">EX</span><strong>Execute</strong><span>ALU, ALU control, forwarding muxes</span></div>
+          <div class="pl-stage"><div class="pl-title"><span class="pl-abbr">EX</span><span class="pl-name">(Execute)</span></div><span class="pl-detail">ALU, ALU control, forwarding muxes</span></div>
           <div class="pl-reg"><span>EX/MEM</span></div>
-          <div class="pl-stage"><span class="pl-abbr">MEM</span><strong>Memory</strong><span>Data memory read and write</span></div>
+          <div class="pl-stage"><div class="pl-title"><span class="pl-abbr">MEM</span><span class="pl-name">(Memory)</span></div><span class="pl-detail">Data memory read and write</span></div>
           <div class="pl-reg"><span>MEM/WB</span></div>
-          <div class="pl-stage"><span class="pl-abbr">WB</span><strong>Write back</strong><span>Picks ALU result or loaded data</span></div>
+          <div class="pl-stage"><div class="pl-title"><span class="pl-abbr">WB</span><span class="pl-name">(Write back)</span></div><span class="pl-detail">Picks ALU result or loaded data</span></div>
         </div>
         <div class="pl-notes">
           <div class="pl-note pl-hazard"><strong>Hazard detection</strong><span>Stalls on a load-use hazard and flushes IF/ID on a taken branch or jump</span></div>
