@@ -1,212 +1,344 @@
 <!--
-  Portfolio HTML assisted by ChatGPT, Feb 2026
-  Author: David Kim
+  Portfolio — David Kim
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>David Kim | Portfolio</title>
+  <title>David Kim | Embedded Systems Portfolio</title>
+  <meta name="description" content="David Kim — Computer Science and Engineering student at UC Irvine. Hands-on embedded systems projects: a quadcopter drone, a 4-DOF robotic arm, and an ATmega32 Simon game." />
+  <meta property="og:title" content="David Kim | Embedded Systems Portfolio" />
+  <meta property="og:description" content="Hardware and embedded systems projects by a UC Irvine Computer Science and Engineering student." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://daviddki.github.io/projects/" />
+  <meta property="og:image" content="https://daviddki.github.io/projects/images/robot_arm/complete.webp" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1f3a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' fill='%23ffd23f' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="css/portfolio.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-  <header>
-    <h1>David Kim</h1>
-    <p>Computer Science and Engineering | UC Irvine</p>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="David Kim, home">
+        <span class="brand-mark">DK</span>
+        <span class="brand-name">David Kim</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main id="top">
 
-  <div class="main-content">
-    <section id="projects">
-      <h2>Projects</h2>
-      <!-- 1. Drone -->
-      <div class="project">
-        <h3>Quadcopter Drone (Class Project)</h3>
-        <p><strong>Role:</strong> Embedded Systems Engineer | Sep 2025 – Nov 2025</p>
-        <p>
-          Over the course of a quarter, our team of four assembled a drone from a set of components provided by the professor, wiring and
-          configuring each system to create a fully functional UAV. I worked alongside three other students, implementing wiring, integrating
-          systems, and testing as part of a fully collaborative effort. The drone was configured using ArduPilot firmware, which we
-          installed and calibrated on the flight controller. We also integrated the GPS module and telemetry system to enable autonomous flight
-          capabilities.
-        </p>
-
-        <p class="media-label">Build Process</p>
-
-        <div class="project-media">
-          <figure>
-            <img src="images/drone/radiorx.JPEG" alt="Radio Receiver">
-            <figcaption>Jumper wires soldered to the radio receiver.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/drone/flight_controller.JPEG" alt="Flight Controller">
-            <figcaption>Fully assembled flight controller with all pins soldered..</figcaption>
-          </figure>
+    <!-- Intro -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Computer Science &amp; Engineering · UC Irvine · Class of 2027</p>
+          <h1>I build things where code meets hardware.</h1>
+          <p class="lede">
+            I'm David Kim, a CSE student at UC Irvine. My projects sit at the embedded layer: wiring and
+            soldering circuits, flashing firmware, and writing the code that makes motors, sensors and
+            displays actually do something.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">See the projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
         </div>
-
-        <div class="project-media">
-          <figure>
-            <img src="images/drone/radio_controller.JPEG" alt="Radio Controller">
-            <figcaption>Flashing firmware on the radio controller.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/drone/almost_complete.jpeg" alt="Final Product">
-            <figcaption>Nearly complete drone assembly.</figcaption>
-          </figure>
-        </div>
-
-        <p class="media-label">Maiden Flight</p>
-
-        <figure>
-          <video controls muted>
-            <source src="videos/maiden_flight.mov" type="video/mp4">
-          </video>
-        </figure>
-
-        <p>
-          A complete list of components used in this project is provided in the PDF: 
-          <a href="docs/StudentDroneAndToolKitChecklist.pdf" target="_blank">List of Parts</a>.
-        </p>
+        <ul class="stats" aria-label="At a glance">
+          <li><span class="stat-num">3</span><span class="stat-label">hardware builds</span></li>
+          <li><span class="stat-num">2–6</span><span class="stat-label">person teams</span></li>
+          <li><span class="stat-num">C / Arduino</span><span class="stat-label">ArduPilot · ATmega32</span></li>
+        </ul>
       </div>
-
-      <!-- 2. Robot Arm -->
-      <div class="project">
-        <h3>Robotic Arm</h3>
-        <p><strong>Role:</strong> Electrical Engineer | Jan 2025 – May 2025</p>
-        <p>
-          This 4-DOF robotic arm was developed over several months by a six-member interdisciplinary team across design, mechanical, and
-          electrical subteams, incorporating custom 3D-printed components and independently wired electronics. As an Electrical Engineer,
-          I was responsible for programming the arm’s movement and integrating circuitry between electronic components and power systems.
-          The custom designed hand uses servo motors, while the arm uses stepper motors, with all movement programmed in Arduino IDE.
-        </p>
-        
-        <p class="media-label">Electrical Integration</p>
-
-        <div class="project-media">
-          <figure>
-            <img src="images/robot_arm/wires.jpeg" alt="Wiring Integration">
-            <figcaption>Custom wiring between RAMPS Shield and stepper drivers.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/robot_arm/circuitry.jpeg" alt="Robotic Arm Circuitry">
-            <figcaption>Completed end-to-end wiring from the power supply to the motor drivers.</figcaption>
-          </figure>
-        </div>
-
-        <figure>
-          <video controls muted>
-            <source src="videos/arm_movement.mp4" type="video/mp4">
-          </video>
-          <figcaption>Moving the robotic arm for the first time.</figcaption>
-        </figure>
-
-
-        <p class="media-label">System Testing & Final Assembly</p>
-
-        <div class="project-media">
-          <figure>
-            <img src="images/robot_arm/testing.jpeg" alt="Testing">
-            <figcaption>Testing hand movement, a collaborative effort between electrical and mechanical subteams.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/robot_arm/complete.jpeg" alt="Final Product">
-            <figcaption>Fully assembled 4-DOF robotic arm.</figcaption>
-          </figure>
-        </div>
-
-        <p class="project-link">
-          The code for the 4-DOF arm is available on 
-          <a href="https://github.com/daviddki/robot-arm" target="_blank">GitHub</a>.
-        </p>
-      </div>
-
-      <!-- 3. Simon Game -->
-      <div class="project">
-        <h3>Simon Game (Class Project)</h3>
-        <p><strong>Role:</strong> Embedded Systems Engineer | May 2025 – Jun 2025</p>
-        <p>
-          This class project involved designing and building a physical version of the classic Simon game using an ATmega32 microcontroller.
-          As a culminating project in the course, I worked with a partner to create an embedded system that integrated the various components
-          and concepts learned throughout the semester. I coded the game logic in Arduino and assisted with wiring and integrating the buttons,
-          LEDs, buzzers, and LCD display.
-        </p>
-
-        <p class="media-label">Build Process</p>
-        
-        <div class="project-media">
-          <figure>
-            <img src="images/simon_game/soldering.jpg" alt="Soldering">
-            <figcaption>Soldering the LCD pins.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/simon_game/wiring.jpeg" alt="Simon Game Circuitry">
-            <figcaption>Wiring setup from a previous project, applied to the Simon Game.</figcaption>
-          </figure>
-        </div>
-
-        <p class="media-label">Final Assembly</p>
-
-        <div class="project-media">
-          <figure>
-            <img src="images/simon_game/complete.png" alt="Complete Simon Game">
-            <figcaption>Final assembled Simon Game.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/simon_game/diagram.png" alt="Wiring Diagram">
-            <figcaption>Wiring diagram for the Simon Game.</figcaption>
-          </figure>
-        </div>
-
-        <p class="project-link">
-          The code for the Simon Game is available on 
-          <a href="https://github.com/samdryoo/cs145_projects/tree/main/project5" target="_blank">GitHub</a>.
-        </p>
-
-        <p>
-          A complete list of components used in this project is provided in the PDF: 
-          <a href="docs/CS 145_Parts_List.pdf" target="_blank">List of Parts</a>.
-        </p>
-
-      </div>
-
-      <!-- Additional projects can be added here -->
-
     </section>
-  </div>
 
-  <footer id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <img src="images/email.png" alt="Email">
-        <a href="mailto:daviddkim0@gmail.com">daviddkim0@gmail.com</a>
+    <!-- Project index -->
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p class="section-sub">Most recent first. Tap any photo to enlarge.</p>
+        </div>
+
+        <ol class="project-index">
+          <li>
+            <a href="#drone">
+              <img src="images/drone/almost_complete.webp" alt="" loading="lazy" width="1200" height="1600" />
+              <span class="idx-num">01</span>
+              <span class="idx-title">Quadcopter Drone</span>
+              <span class="idx-meta">ArduPilot · GPS · Telemetry</span>
+            </a>
+          </li>
+          <li>
+            <a href="#robot-arm">
+              <img src="images/robot_arm/complete.webp" alt="" loading="lazy" width="1200" height="1600" />
+              <span class="idx-num">02</span>
+              <span class="idx-title">4-DOF Robotic Arm</span>
+              <span class="idx-meta">Arduino · Steppers · Servos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#simon">
+              <img src="images/simon_game/complete.webp" alt="" loading="lazy" width="907" height="767" />
+              <span class="idx-num">03</span>
+              <span class="idx-title">Simon Game</span>
+              <span class="idx-meta">ATmega32 · LCD · C</span>
+            </a>
+          </li>
+        </ol>
+
+        <!-- 1. Drone -->
+        <article class="project" id="drone">
+          <div class="project-head">
+            <span class="project-num">01</span>
+            <div>
+              <h3>Quadcopter Drone</h3>
+              <p class="project-kicker">Class project · Embedded Systems Engineer</p>
+            </div>
+          </div>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Embedded Systems Engineer</dd></div>
+            <div><dt>Timeline</dt><dd>Sep 2025 – Nov 2025</dd></div>
+            <div><dt>Team</dt><dd>4 students</dd></div>
+            <div><dt>Stack</dt><dd>
+              <ul class="chips"><li>ArduPilot</li><li>Flight controller</li><li>GPS</li><li>Telemetry</li><li>Soldering</li></ul>
+            </dd></div>
+          </dl>
+
+          <p>
+            Over the course of a quarter, our team of four assembled a drone from a set of components provided by the professor, wiring and
+            configuring each system to create a fully functional UAV. I worked alongside three other students, implementing wiring, integrating
+            systems, and testing as part of a fully collaborative effort. The drone was configured using ArduPilot firmware, which we
+            installed and calibrated on the flight controller. We also integrated the GPS module and telemetry system to enable autonomous flight
+            capabilities.
+          </p>
+
+          <h4 class="media-label">Build process</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/drone/radiorx.webp" alt="Four-color jumper wire harness soldered for the radio receiver" loading="lazy" width="1200" height="1600" />
+              <figcaption>Jumper wires soldered to the radio receiver.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/drone/flight_controller.webp" alt="Flight controller board with header pins soldered and power lead attached" loading="lazy" width="1200" height="1600" />
+              <figcaption>Fully assembled flight controller with all pins soldered.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/drone/radio_controller.webp" alt="Handheld radio controller connected to a bench power supply and laptop for firmware flashing" loading="lazy" width="1200" height="1600" />
+              <figcaption>Flashing firmware on the radio controller.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/drone/almost_complete.webp" alt="Top-down view of the quadcopter frame with motors, flight controller and wiring installed" loading="lazy" width="1200" height="1600" />
+              <figcaption>Nearly complete drone assembly.</figcaption>
+            </figure>
+          </div>
+
+          <h4 class="media-label">Maiden flight</h4>
+          <figure class="video video-portrait">
+            <video controls muted playsinline preload="none" poster="videos/maiden_flight_poster.jpg">
+              <source src="videos/maiden_flight.mp4" type="video/mp4" />
+              Your browser can't play this video. <a href="videos/maiden_flight.mp4">Download it instead.</a>
+            </video>
+            <figcaption>First flight inside the netted test cage.</figcaption>
+          </figure>
+
+          <div class="project-links">
+            <a class="link-btn" href="docs/StudentDroneAndToolKitChecklist.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h6"/></svg>
+              Parts list (PDF)
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Robot Arm -->
+        <article class="project" id="robot-arm">
+          <div class="project-head">
+            <span class="project-num">02</span>
+            <div>
+              <h3>4-DOF Robotic Arm</h3>
+              <p class="project-kicker">Team project · Electrical Engineer</p>
+            </div>
+          </div>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Electrical Engineer</dd></div>
+            <div><dt>Timeline</dt><dd>Jan 2025 – May 2025</dd></div>
+            <div><dt>Team</dt><dd>6 members, 3 subteams</dd></div>
+            <div><dt>Stack</dt><dd>
+              <ul class="chips"><li>Arduino</li><li>Stepper motors</li><li>Servo motors</li><li>RAMPS shield</li><li>3D printing</li></ul>
+            </dd></div>
+          </dl>
+
+          <p>
+            This 4-DOF robotic arm was developed over several months by a six-member interdisciplinary team across design, mechanical, and
+            electrical subteams, incorporating custom 3D-printed components and independently wired electronics. As an Electrical Engineer,
+            I was responsible for programming the arm’s movement and integrating circuitry between electronic components and power systems.
+            The custom designed hand uses servo motors, while the arm uses stepper motors, with all movement programmed in Arduino IDE.
+          </p>
+
+          <h4 class="media-label">Electrical integration</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/robot_arm/wires.webp" alt="RAMPS shield and stepper drivers with custom wiring on a cutting mat" loading="lazy" width="1200" height="1600" />
+              <figcaption>Custom wiring between RAMPS shield and stepper drivers.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/robot_arm/circuitry.webp" alt="Power supply wired to a row of motor drivers mounted on a board" loading="lazy" width="1200" height="1600" />
+              <figcaption>End-to-end wiring from the power supply to the motor drivers.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="video video-portrait">
+            <video controls muted playsinline preload="none" poster="videos/arm_movement_poster.jpg">
+              <source src="videos/arm_movement_web.mp4" type="video/mp4" />
+              Your browser can't play this video. <a href="videos/arm_movement_web.mp4">Download it instead.</a>
+            </video>
+            <figcaption>Moving the robotic arm for the first time.</figcaption>
+          </figure>
+
+          <h4 class="media-label">System testing &amp; final assembly</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/robot_arm/testing.webp" alt="Hand holding wires while testing the servo-driven gripper connected to an Arduino" loading="lazy" width="1200" height="1600" />
+              <figcaption>Testing hand movement, a joint effort between the electrical and mechanical subteams.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/robot_arm/complete.webp" alt="Completed white and black 3D-printed robotic arm standing upright" loading="lazy" width="1200" height="1600" />
+              <figcaption>Fully assembled 4-DOF robotic arm.</figcaption>
+            </figure>
+          </div>
+
+          <div class="project-links">
+            <a class="link-btn" href="https://github.com/daviddki/robot-arm" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              View code on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Simon Game -->
+        <article class="project" id="simon">
+          <div class="project-head">
+            <span class="project-num">03</span>
+            <div>
+              <h3>Simon Game</h3>
+              <p class="project-kicker">Class project · Embedded Systems Engineer</p>
+            </div>
+          </div>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Embedded Systems Engineer</dd></div>
+            <div><dt>Timeline</dt><dd>May 2025 – Jun 2025</dd></div>
+            <div><dt>Team</dt><dd>2 (with a partner)</dd></div>
+            <div><dt>Stack</dt><dd>
+              <ul class="chips"><li>ATmega32</li><li>Arduino</li><li>LCD</li><li>Buttons &amp; LEDs</li><li>Buzzer</li></ul>
+            </dd></div>
+          </dl>
+
+          <p>
+            This class project involved designing and building a physical version of the classic Simon game using an ATmega32 microcontroller.
+            As a culminating project in the course, I worked with a partner to create an embedded system that integrated the various components
+            and concepts learned throughout the semester. I coded the game logic in Arduino and assisted with wiring and integrating the buttons,
+            LEDs, buzzers, and LCD display.
+          </p>
+
+          <h4 class="media-label">Build process</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/simon_game/soldering.webp" alt="Soldering iron joining header pins to a character LCD module" loading="lazy" width="1179" height="1006" />
+              <figcaption>Soldering the LCD pins.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/simon_game/wiring.webp" alt="ATmega32 microcontroller wired on a breadboard" loading="lazy" width="1600" height="1295" />
+              <figcaption>Wiring setup from a previous project, applied to the Simon Game.</figcaption>
+            </figure>
+          </div>
+
+          <h4 class="media-label">Final assembly</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/simon_game/complete.webp" alt="Finished Simon game on breadboards with LEDs, LCD, keypad and speaker" loading="lazy" width="907" height="767" />
+              <figcaption>Final assembled Simon Game.</figcaption>
+            </figure>
+            <figure class="diagram">
+              <img src="images/simon_game/diagram.webp" alt="Schematic of the ATmega32 connected to LEDs, speaker, keypad and LCD" loading="lazy" width="2400" height="1544" />
+              <figcaption>Wiring diagram for the Simon Game.</figcaption>
+            </figure>
+          </div>
+
+          <div class="project-links">
+            <a class="link-btn" href="https://github.com/samdryoo/cs145_projects/tree/main/project5" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              View code on GitHub
+            </a>
+            <a class="link-btn" href="docs/CS%20145_Parts_List.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h6"/></svg>
+              Parts list (PDF)
+            </a>
+          </div>
+        </article>
+
       </div>
-      <div class="contact-item">
-        <img src="images/phone.png" alt="Phone">
-        <a href="tel:+17146069972">(714) 606-9972</a>
-      </div>
-      <div class="contact-item">
-        <img src="images/linkedin.png" alt="LinkedIn">
-        <a href="https://www.linkedin.com/in/david-kim-152a4724b/" target="_blank">linkedin.com/in/david-kim</a>
-      </div>
-      <div class="contact-item">
-        <img src="images/github.png" alt="GitHub">
-        <a href="https://github.com/daviddki" target="_blank">github.com/daviddki</a>
-      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p class="footer-lede">Open to internships and co-ops in embedded systems, firmware and hardware-adjacent software.</p>
+      <ul class="contact-list">
+        <li>
+          <a href="mailto:daviddkim0@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm18 2-10 7L2 6"/></svg>
+            daviddkim0@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="tel:+17146069972">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            (714) 606-9972
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/david-kim-152a4724b/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/daviddki" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            github.com/daviddki
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">© 2026 David Kim</p>
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <dialog id="lightbox" aria-label="Enlarged photo">
+    <button class="lb-close" type="button" aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous photo">‹</button>
+    <figure>
+      <img alt="" />
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Next photo">›</button>
+  </dialog>
+
+  <script src="scripts/portfolio.js" defer></script>
 </body>
 </html>
