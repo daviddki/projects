@@ -3,7 +3,7 @@
   const dialog = document.getElementById("lightbox");
   if (!dialog || typeof dialog.showModal !== "function") return;
 
-  const imgs = Array.from(document.querySelectorAll(".gallery img"));
+  const imgs = Array.from(document.querySelectorAll(".gallery img, img.zoomable"));
   const big = dialog.querySelector("img");
   const cap = dialog.querySelector("figcaption");
   let index = 0;

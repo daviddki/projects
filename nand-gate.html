@@ -57,8 +57,14 @@
           switches symmetrically, and how its timing changes with operating conditions.
         </p>
 
-        <h4 class="media-label">Project stages</h4>
-        <ol class="stages">
+        <div class="split">
+          <figure class="split-fig">
+            <img class="zoomable" src="images/nand_gate/schematic.png" alt="Cadence schematic of the NAND gate: two PMOS transistors in parallel between VDD and the output, and two NMOS transistors in series between the output and ground, with pulse sources on inputs A and B" loading="lazy" width="403" height="625" />
+            <figcaption>Schematic in Cadence Virtuoso: two parallel PMOS pull-up transistors (W = 120 nm) and two series NMOS pull-down transistors (W = 90 nm), driven by pulse sources A and B.</figcaption>
+          </figure>
+          <div>
+            <h4 class="media-label">Project stages</h4>
+            <ol class="stages">
           <li>
             <strong>Functional verification</strong>
             <span>Built the transistor-level schematic and drove both inputs with square pulses, one at twice the period of the other,
@@ -75,6 +81,14 @@
             0.8 V to 1.2 V and across temperatures from 0 °C to 90 °C.</span>
           </li>
         </ol>
+          </div>
+        </div>
+
+        <h4 class="media-label">Optimization result</h4>
+        <figure class="wide-fig">
+          <img class="zoomable" src="images/nand_gate/vtc.png" alt="Voltage transfer curves of the NAND gate for PMOS widths of 90, 120, 150 and 180 nanometers; the output falls from 1 V to 0 V as the input crosses roughly 0.5 V" loading="lazy" width="1712" height="778" />
+          <figcaption>Voltage transfer curves for PMOS widths of 90 nm (red), 120 nm (yellow), 150 nm (green) and 180 nm (cyan). The 120 nm curve passes closest to (0.5 V, 0.5 V), so it is the most symmetrical, which sets the sizing above.</figcaption>
+        </figure>
 
         <div class="project-links">
           <a class="link-btn" href="docs/CSE112_Project_Report.pdf" target="_blank" rel="noopener">
