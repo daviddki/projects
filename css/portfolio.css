@@ -247,7 +247,7 @@ ul, ol { list-style: none; }
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
   .spec { grid-template-columns: repeat(3, 1fr); }
   .spec > div:nth-child(3) { border-right: 0; }
   .spec > div:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); }
