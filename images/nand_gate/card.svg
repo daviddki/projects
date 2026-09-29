@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900" role="img" aria-label="NAND gate symbol">
+  <defs>
+    <pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#0b1f3a"/>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 120H140M70 180H140" stroke="#ffffff" stroke-opacity=".75" stroke-width="4"/>
+    <path d="M140 95H190A55 55 0 0 1 190 205H140Z" stroke="#ffffff" stroke-width="5"/>
+    <circle cx="252" cy="150" r="7" stroke="#ffd23f" stroke-width="4"/>
+    <path d="M259 150H330" stroke="#ffd23f" stroke-width="4"/>
+  </g>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="18" font-weight="600" fill="#ffffff" fill-opacity=".8">
+    <text x="42" y="126">A</text>
+    <text x="42" y="186">B</text>
+    <text x="342" y="156" fill="#ffd23f" fill-opacity="1">Y</text>
+  </g>
+</svg>
