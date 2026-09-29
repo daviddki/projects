@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Game | David Kim</title>
+  <meta name="description" content="Class project. Simon game on an ATmega32 with LCD, keypad, LEDs and speaker." />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1f3a'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='14' font-weight='700' fill='%23ffd23f' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="css/portfolio.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="David Kim, home">
+        <span class="brand-mark">DK</span>
+        <span class="brand-name">David Kim</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <div class="wrap">
+      <a class="back-link" href="index.html#projects">&larr; All projects</a>
+
+      <article class="project">
+          <div class="project-head">
+            <span class="project-num">03</span>
+            <div>
+              <h1>Simon Game</h1>
+              <p class="project-kicker">Class project · Embedded Systems Engineer</p>
+            </div>
+          </div>
+
+          <dl class="spec">
+            <div><dt>Role</dt><dd>Embedded Systems Engineer</dd></div>
+            <div><dt>Timeline</dt><dd>May 2025 – Jun 2025</dd></div>
+            <div><dt>Team</dt><dd>2 (with a partner)</dd></div>
+            <div><dt>Stack</dt><dd>
+              <ul class="chips"><li>ATmega32</li><li>Arduino</li><li>LCD</li><li>Buttons &amp; LEDs</li><li>Buzzer</li></ul>
+            </dd></div>
+          </dl>
+
+          <p>
+            This class project involved designing and building a physical version of the classic Simon game using an ATmega32 microcontroller.
+            As a culminating project in the course, I worked with a partner to create an embedded system that integrated the various components
+            and concepts learned throughout the semester. I coded the game logic in Arduino and assisted with wiring and integrating the buttons,
+            LEDs, buzzers, and LCD display.
+          </p>
+
+          <h4 class="media-label">Build process</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/simon_game/soldering.webp" alt="Soldering iron joining header pins to a character LCD module" loading="lazy" width="1179" height="1006" />
+              <figcaption>Soldering the LCD pins.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/simon_game/wiring.webp" alt="ATmega32 microcontroller wired on a breadboard" loading="lazy" width="1600" height="1295" />
+              <figcaption>Wiring setup from a previous project, applied to the Simon Game.</figcaption>
+            </figure>
+          </div>
+
+          <h4 class="media-label">Final assembly</h4>
+          <div class="gallery">
+            <figure>
+              <img src="images/simon_game/complete.webp" alt="Finished Simon game on breadboards with LEDs, LCD, keypad and speaker" loading="lazy" width="907" height="767" />
+              <figcaption>Final assembled Simon Game.</figcaption>
+            </figure>
+            <figure class="diagram">
+              <img src="images/simon_game/diagram.webp" alt="Schematic of the ATmega32 connected to LEDs, speaker, keypad and LCD" loading="lazy" width="2400" height="1544" />
+              <figcaption>Wiring diagram for the Simon Game.</figcaption>
+            </figure>
+          </div>
+
+          <div class="project-links">
+            <a class="link-btn" href="https://github.com/samdryoo/cs145_projects/tree/main/project5" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              View code on GitHub
+            </a>
+            <a class="link-btn" href="docs/CS%20145_Parts_List.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M9 13h6M9 17h6"/></svg>
+              Parts list (PDF)
+            </a>
+          </div>
+        </article>
+
+        <nav class="pager" aria-label="More projects">
+          <a href="robot-arm.html"><span>Previous</span>4-DOF Robotic Arm</a>
+          <a href="drone.html" class="pager-next"><span>Next</span>Quadcopter Drone</a>
+        </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer-slim">
+    <div class="wrap">
+      <a href="index.html#contact">Contact</a>
+      <p class="copyright">&copy; 2026 David Kim</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox" aria-label="Enlarged photo">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+    <figure>
+      <img alt="" />
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Next photo">&rsaquo;</button>
+  </dialog>
+
+  <script src="scripts/portfolio.js" defer></script>
+</body>
+</html>
