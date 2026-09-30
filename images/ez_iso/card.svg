@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900" role="img" aria-label="A pipe run with a valve, a flange and an elbow, each tagged with a class label">
+  <defs><pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="1"/></pattern></defs>
+  <rect width="400" height="300" fill="#0b1f3a"/>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="10" stroke-linejoin="round" stroke-linecap="butt">
+    <path d="M30 170H130"/><path d="M200 170H300Q330 170 330 140V90"/>
+  </g>
+  <g fill="#0b1f3a" stroke="#ffffff" stroke-width="3" stroke-linejoin="round">
+    <path d="M130 145L200 195V145L130 195Z"/>
+  </g>
+  <g fill="#ffd23f"><rect x="96" y="150" width="6" height="40" rx="2"/><rect x="311" y="90" width="38" height="6" rx="2" transform="translate(0 -6)"/></g>
+  <g font-family="ui-monospace,Menlo,monospace" font-size="12" font-weight="600" text-anchor="middle">
+    <rect x="70" y="212" width="66" height="22" rx="5" fill="#ffd23f"/><text x="103" y="227" fill="#0b1f3a">FLANGE</text>
+    <rect x="132" y="112" width="66" height="22" rx="5" fill="#ffd23f"/><text x="165" y="127" fill="#0b1f3a">VALVE</text>
+    <rect x="290" y="190" width="70" height="22" rx="5" fill="#ffd23f"/><text x="325" y="205" fill="#0b1f3a">FITTING</text>
+  </g>
+  <text x="200" y="266" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#ffffff" fill-opacity=".7">geometry + connectors → class</text>
+</svg>

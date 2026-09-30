@@ -386,3 +386,24 @@ img.zoomable:hover { opacity: .9; }
   #lightbox[open] { grid-template-columns: 44px 1fr 44px; }
   .lb-nav { width: 38px; height: 38px; font-size: 22px; }
 }
+
+/* ---------- Classifier page (EZ-ISO) ---------- */
+.flow3 { display: grid; grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1.2fr); align-items: stretch; margin-bottom: 24px; }
+.flow-arrow { display: grid; place-items: center; color: var(--ink-3); font-size: 1.3rem; }
+.stack-gap { margin-top: 28px; }
+.chart .bar.s1 { fill: var(--series-1); }
+.chart .bar.s2 { fill: var(--series-2); }
+.chart .bar.s3 { fill: var(--series-3); }
+.chart svg { width: 100%; height: auto; }
+.data-table details + details { margin-top: 12px; }
+.notes { display: grid; gap: 12px; max-width: 70ch; color: var(--ink-2); list-style: none; }
+.notes strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 760px) {
+  .flow3 { grid-template-columns: 1fr; gap: 6px; }
+  .flow-arrow { transform: rotate(90deg); height: 24px; }
+  .kpis { grid-template-columns: 1fr; }
+  .chart-pair { grid-template-columns: 1fr; }
+}
+.project > p + p, .project > p + .kpis { margin-top: 14px; }
+.project > .kpis { margin: 24px 0 8px; }
+.project .notes + .chart-note { margin-top: 20px; }
